@@ -1,8 +1,5 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useNavigate, Link } from 'react-router-dom';
 import questions from '@/data/questions.json';
 import ProgressBar from '@/components/ProgressBar';
 import QuestionCard from '@/components/QuestionCard';
@@ -12,12 +9,11 @@ const STORAGE_KEY = 'ai-test-progress';
 const TOTAL = questions.length;
 
 export default function QuizPage() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState<number[]>(Array(TOTAL).fill(-1));
   const [current, setCurrent] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
-  // Load from localStorage on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -36,7 +32,6 @@ export default function QuizPage() {
     setLoaded(true);
   }, []);
 
-  // Persist to localStorage on change
   useEffect(() => {
     if (!loaded) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers, current }));
@@ -54,7 +49,7 @@ export default function QuizPage() {
     } else {
       const type = getResultTypeFromAnswers(answers);
       localStorage.removeItem(STORAGE_KEY);
-      router.push(`/result/${type}/`);
+      navigate(`/result/${type}`);
     }
   };
 
@@ -86,7 +81,7 @@ export default function QuizPage() {
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors flex items-center gap-1">
+          <Link to="/" className="text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
@@ -137,7 +132,7 @@ export default function QuizPage() {
       </main>
 
       {/* Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-100 safe-bottom">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-gray-100">
         <div className="max-w-2xl mx-auto px-4 py-4 flex gap-3">
           <button
             onClick={handlePrev}

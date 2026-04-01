@@ -1,9 +1,4 @@
-import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'AI 시대 생존력 테스트',
-};
+import { Link } from 'react-router-dom';
 
 const STATS = [
   { value: '10', label: '가지 질문' },
@@ -48,7 +43,7 @@ export default function HomePage() {
           </p>
 
           <Link
-            href="/quiz"
+            to="/quiz"
             className="inline-flex items-center gap-2 bg-white text-indigo-700 font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             테스트 시작하기
@@ -57,7 +52,6 @@ export default function HomePage() {
             </svg>
           </Link>
 
-          {/* Stats */}
           <div className="flex justify-center gap-8 mt-10">
             {STATS.map((s) => (
               <div key={s.label} className="text-center">
@@ -113,7 +107,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="max-w-2xl mx-auto px-4 pb-16 text-center">
         <Link
-          href="/quiz"
+          to="/quiz"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
         >
           지금 테스트 시작
@@ -125,7 +119,7 @@ export default function HomePage() {
       <footer className="border-t border-gray-100 py-6">
         <div className="max-w-2xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-400">
           <span>© 2024 AI 시대 생존력 테스트</span>
-          <Link href="/about" className="hover:text-indigo-600 transition-colors">
+          <Link to="/about" className="hover:text-indigo-600 transition-colors">
             테스트 소개 →
           </Link>
         </div>

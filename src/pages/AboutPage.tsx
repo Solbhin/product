@@ -1,19 +1,12 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import results from '@/data/results.json';
-
-export const metadata: Metadata = {
-  title: '테스트 소개',
-  description: 'AI 시대 생존력 테스트가 무엇인지, 어떻게 만들어졌는지 알아보세요.',
-};
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FF]">
-      {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors flex items-center gap-1">
+          <Link to="/" className="text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
@@ -25,16 +18,12 @@ export default function AboutPage() {
       </header>
 
       <main className="max-w-2xl mx-auto px-4 py-8 space-y-6 pb-16">
-        {/* Title */}
         <div className="text-center py-4">
           <div className="text-5xl mb-4">🤖</div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            AI 시대 생존력 테스트
-          </h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">AI 시대 생존력 테스트</h1>
           <p className="text-gray-500 mt-2">당신의 AI 활용 준비도를 알아보세요</p>
         </div>
 
-        {/* About */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
           <h2 className="font-bold text-gray-800 mb-3 text-lg">이 테스트는 무엇인가요?</h2>
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -45,33 +34,31 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Scoring */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
           <h2 className="font-bold text-gray-800 mb-4 text-lg">점수 산정 방식</h2>
           <div className="space-y-2">
-            <div className="flex items-center gap-3 text-sm">
-              <span className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xs">Q</span>
-              <span className="text-gray-600">총 10개 질문, 각 4개 보기 (0~3점)</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <span className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 font-bold flex items-center justify-center text-xs">∑</span>
-              <span className="text-gray-600">최저 0점 ~ 최고 30점</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <span className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-xs">→</span>
-              <span className="text-gray-600">점수 구간에 따라 8가지 유형 중 하나 결정</span>
-            </div>
+            {[
+              { bg: 'bg-indigo-100', text: 'text-indigo-700', label: 'Q', desc: '총 10개 질문, 각 4개 보기 (0~3점)' },
+              { bg: 'bg-violet-100', text: 'text-violet-700', label: '∑', desc: '최저 0점 ~ 최고 30점' },
+              { bg: 'bg-emerald-100', text: 'text-emerald-700', label: '→', desc: '점수 구간에 따라 8가지 유형 중 하나 결정' },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-3 text-sm">
+                <span className={`w-8 h-8 rounded-full ${item.bg} ${item.text} font-bold flex items-center justify-center text-xs`}>
+                  {item.label}
+                </span>
+                <span className="text-gray-600">{item.desc}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Types list */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100">
           <h2 className="font-bold text-gray-800 mb-4 text-lg">8가지 AI 생존 유형</h2>
           <div className="space-y-3">
             {results.map((r) => (
               <Link
                 key={r.id}
-                href={`/result/${r.id}/`}
+                to={`/result/${r.id}`}
                 className="flex items-center gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-colors group"
               >
                 <span className="text-3xl">{r.emoji}</span>
@@ -89,7 +76,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Disclaimer */}
         <div className="bg-amber-50 border border-amber-100 rounded-3xl p-6">
           <h3 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,10 +88,9 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* CTA */}
         <div className="text-center pt-4">
           <Link
-            href="/quiz"
+            to="/quiz"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             테스트 시작하기

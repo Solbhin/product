@@ -1,44 +1,24 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import type { Metadata } from 'next';
+import { useParams, Link } from 'react-router-dom';
 import ResultCard from '@/components/ResultCard';
 import ShareButton from '@/components/ShareButton';
-import { getResultById, getAllResultIds } from '@/lib/scoring';
+import { getResultById } from '@/lib/scoring';
 import results from '@/data/results.json';
 
-// Pre-generate all 8 result pages at build time
-export function generateStaticParams() {
-  return getAllResultIds().map((id) => ({ type: id }));
-}
+export default function ResultPage() {
+  const { type } = useParams<{ type: string }>();
+  const result = getResultById(type ?? '');
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { type: string };
-}): Promise<Metadata> {
-  const result = getResultById(params.type);
-  if (!result) return {};
-
-  const title = `나의 AI 유형은 "${result.title}" ${result.emoji}`;
-  const description = result.subtitle;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-    },
-    twitter: {
-      title,
-      description,
-    },
-  };
-}
-
-export default function ResultPage({ params }: { params: { type: string } }) {
-  const result = getResultById(params.type);
-  if (!result) notFound();
+  if (!result) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
+        <div className="text-5xl">🤔</div>
+        <p className="text-gray-600 font-medium">존재하지 않는 유형입니다.</p>
+        <Link to="/quiz" className="text-indigo-600 font-bold hover:underline">
+          테스트 다시 하기 →
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#F8F9FF]">
@@ -57,7 +37,7 @@ export default function ResultPage({ params }: { params: { type: string } }) {
           <ShareButton />
 
           <Link
-            href="/quiz"
+            to="/quiz"
             className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl border-2 border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition-all active:scale-95"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -67,7 +47,7 @@ export default function ResultPage({ params }: { params: { type: string } }) {
           </Link>
 
           <Link
-            href="/"
+            to="/"
             className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl text-gray-500 font-medium hover:text-gray-700 transition-colors"
           >
             ← 홈으로
@@ -81,11 +61,11 @@ export default function ResultPage({ params }: { params: { type: string } }) {
           </h3>
           <div className="grid grid-cols-2 gap-2">
             {results
-              .filter((r) => r.id !== params.type)
+              .filter((r) => r.id !== type)
               .map((r) => (
                 <Link
                   key={r.id}
-                  href={`/result/${r.id}/`}
+                  to={`/result/${r.id}`}
                   className="flex items-center gap-3 bg-white p-3 rounded-2xl border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all"
                 >
                   <span className="text-2xl">{r.emoji}</span>

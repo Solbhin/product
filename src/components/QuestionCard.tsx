@@ -1,5 +1,3 @@
-'use client';
-
 interface Option {
   label: string;
   text: string;
