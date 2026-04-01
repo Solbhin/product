@@ -1,0 +1,138 @@
+[
+  {
+    "id": "ai-master",
+    "minScore": 27,
+    "maxScore": 30,
+    "title": "AI 마스터",
+    "emoji": "👑",
+    "color": "#6366F1",
+    "bgColor": "#EEF2FF",
+    "badgeColor": "#C7D2FE",
+    "subtitle": "당신은 AI 시대의 진정한 선구자입니다",
+    "description": "AI를 단순히 사용하는 것을 넘어, AI와 함께 새로운 가치를 창조하는 수준에 도달했습니다. 변화에 민첩하게 적응하고, 비판적 사고로 AI를 올바르게 활용하며, 주변에 긍정적인 영향을 미치는 리더입니다. AI 시대에 가장 높은 생존력을 가진 유형입니다.",
+    "recommendations": [
+      "AI 관련 커뮤니티를 이끌거나 지식과 노하우를 적극적으로 공유해보세요",
+      "자신만의 AI 활용 사례를 콘텐츠로 만들어 브랜드를 구축해보세요",
+      "AI를 핵심으로 활용하는 새로운 프로젝트나 비즈니스를 시작해보세요"
+    ]
+  },
+  {
+    "id": "ai-pioneer",
+    "minScore": 22,
+    "maxScore": 26,
+    "title": "AI 개척자",
+    "emoji": "🚀",
+    "color": "#8B5CF6",
+    "bgColor": "#F5F3FF",
+    "badgeColor": "#DDD6FE",
+    "subtitle": "변화의 최전선에서 AI를 다루는 선도자",
+    "description": "AI 도구를 능숙하게 활용하며 주도적으로 변화를 이끌어가는 사람입니다. 새로운 도구에 적극적이고, AI의 한계도 잘 파악하고 있습니다. 조금만 더 깊이 들어가면 진정한 AI 마스터가 될 수 있는 위치에 있습니다.",
+    "recommendations": [
+      "AI 관련 심화 강의나 전문 커뮤니티에 참여해 네트워크를 넓혀보세요",
+      "현재 하는 일에 AI를 더 창의적으로 접목해 차별화된 결과물을 만들어보세요",
+      "주변 사람들에게 AI 활용법을 알려주는 멘토 역할을 해보세요"
+    ]
+  },
+  {
+    "id": "ai-collaborator",
+    "minScore": 17,
+    "maxScore": 21,
+    "title": "AI 협력자",
+    "emoji": "🤝",
+    "color": "#3B82F6",
+    "bgColor": "#EFF6FF",
+    "badgeColor": "#BFDBFE",
+    "subtitle": "AI와 함께 성장하는 실용적인 협업자",
+    "description": "AI를 실용적으로 잘 활용하고 있으며 그 가치를 충분히 인식하고 있습니다. 도구를 사용하는 것에 그치지 않고 비판적으로 평가할 줄도 압니다. 조금 더 다양한 AI 도구를 탐험하면 큰 도약을 이룰 수 있어요.",
+    "recommendations": [
+      "매주 새로운 AI 도구 하나씩 탐험하며 활용 범위를 넓혀보세요",
+      "AI 뉴스레터를 구독해 최신 트렌드를 꾸준히 따라가세요",
+      "현재 사용 중인 AI 도구의 고급 기능을 더 깊이 파고들어 보세요"
+    ]
+  },
+  {
+    "id": "ai-explorer",
+    "minScore": 13,
+    "maxScore": 16,
+    "title": "AI 탐험가",
+    "emoji": "🧭",
+    "color": "#10B981",
+    "bgColor": "#ECFDF5",
+    "badgeColor": "#A7F3D0",
+    "subtitle": "AI 여정을 막 시작한 잠재력 있는 탐험가",
+    "description": "AI에 관심이 생기기 시작했고 조금씩 시도해보고 있습니다. 아직 깊이 있게 활용하지는 않지만, 호기심과 열린 태도를 갖고 있다는 것이 큰 장점입니다. 지금이 AI 여정을 본격적으로 시작할 최적의 타이밍입니다.",
+    "recommendations": [
+      "ChatGPT, Claude 같은 AI 챗봇을 일상 속에서 매일 활용해보세요",
+      "유튜브에서 'AI 활용법' 영상을 찾아 실전 노하우를 빠르게 익혀보세요",
+      "AI로 간단한 업무 문서나 창작물을 하나 완성해보세요"
+    ]
+  },
+  {
+    "id": "ai-observer",
+    "minScore": 9,
+    "maxScore": 12,
+    "title": "AI 관찰자",
+    "emoji": "👁️",
+    "color": "#F59E0B",
+    "bgColor": "#FFFBEB",
+    "badgeColor": "#FDE68A",
+    "subtitle": "AI를 인식하지만 아직 관망 중인 관찰자",
+    "description": "AI에 대한 인식은 충분히 있지만, 아직 본격적으로 활용하지 않고 있습니다. 변화가 빠른 AI 분야에서 관망 기간이 길어질수록 격차가 벌어질 수 있어요. 작은 한 걸음이 큰 차이를 만드는 시점입니다.",
+    "recommendations": [
+      "오늘 당장 ChatGPT에 로그인해서 궁금한 것 하나를 물어보세요",
+      "AI가 내 분야에서 어떻게 활용되고 있는지 사례를 검색해보세요",
+      "AI에 대한 막연한 두려움이나 거부감이 있다면 그 이유를 적어보세요"
+    ]
+  },
+  {
+    "id": "ai-beginner",
+    "minScore": 5,
+    "maxScore": 8,
+    "title": "AI 입문자",
+    "emoji": "🌱",
+    "color": "#EF4444",
+    "bgColor": "#FEF2F2",
+    "badgeColor": "#FECACA",
+    "subtitle": "첫 발을 내딛을 준비가 된 AI 입문자",
+    "description": "AI 시대의 변화를 인식하고 있지만 아직 첫 발을 내딛지 못했습니다. 이미 수많은 서비스에 AI가 녹아들어 있는 지금, 조금만 관심을 가지면 금방 따라잡을 수 있습니다. 지금 시작해도 전혀 늦지 않았습니다.",
+    "recommendations": [
+      "무료로 사용할 수 있는 AI 서비스(ChatGPT Free, Claude 등)에 오늘 가입해보세요",
+      "AI를 활용한 성공 사례나 유튜브 영상을 보며 동기부여를 받아보세요",
+      "스마트폰의 AI 기능(번역, 사진 보정, 음성 인식)부터 적극 활용해보세요"
+    ]
+  },
+  {
+    "id": "ai-skeptic",
+    "minScore": 2,
+    "maxScore": 4,
+    "title": "AI 회의론자",
+    "emoji": "🤔",
+    "color": "#6B7280",
+    "bgColor": "#F9FAFB",
+    "badgeColor": "#E5E7EB",
+    "subtitle": "AI에 회의적이지만 변화는 이미 시작됐습니다",
+    "description": "AI에 대해 회의적이거나 무관심한 편입니다. 그 시각이 틀린 것은 아니지만, 이미 우리 일상 깊숙이 들어온 AI를 외면하면 점점 불편해지는 시대가 오고 있습니다. 조금만 관심을 가져보는 건 어떨까요?",
+    "recommendations": [
+      "AI로 인해 내 분야가 어떻게 변화하고 있는지 사례를 10분만 찾아보세요",
+      "AI가 일상에서 이미 어떻게 쓰이는지 주변을 한번 둘러보세요",
+      "AI 챗봇과 딱 5분만 대화해보세요. 생각보다 유용할 수도 있습니다"
+    ]
+  },
+  {
+    "id": "ai-stranger",
+    "minScore": 0,
+    "maxScore": 1,
+    "title": "AI 이방인",
+    "emoji": "🌙",
+    "color": "#9CA3AF",
+    "bgColor": "#F9FAFB",
+    "badgeColor": "#E5E7EB",
+    "subtitle": "AI 세계와 아직 거리가 있지만, 이미 시작했습니다",
+    "description": "아직 AI 시대의 흐름을 크게 체감하지 못하고 있습니다. 하지만 이 테스트를 완료한 것 자체가 이미 좋은 시작입니다. 아주 작은 호기심 하나가 큰 변화의 씨앗이 됩니다. 지금부터 천천히 시작해도 충분히 따라잡을 수 있어요.",
+    "recommendations": [
+      "'AI란 무엇인가' 라는 기초 개념부터 유튜브나 블로그로 찾아보세요",
+      "스마트폰에서 이미 쓰고 있는 AI 기능(카카오 AI, 네이버 AI 등)을 찾아보세요",
+      "주변에서 AI를 잘 쓰는 사람에게 어떻게 활용하는지 물어보세요"
+    ]
+  }
+]
